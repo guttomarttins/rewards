@@ -1,0 +1,36 @@
+{
+  "name": "Microsoft Rewards Brasil",
+  "short_name": "MS Rewards",
+  "description": "Ganhe recompensas reais (Xbox, Spotify, Gift Cards) fazendo buscas e jogando. 1.320 pontos imediatos no cadastro.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0067B8",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "lifestyle", "entertainment"],
+  "shortcuts": [
+    {
+      "name": "Cadastre-se e ganhe 1.320 pontos",
+      "short_name": "Ganhar pontos",
+      "description": "Cadastre-se no Microsoft Rewards e ganhe 1.320 pontos de boas-vindas",
+      "url": "https://rewards.bing.com/welcome?rh=bYHgIzH2RTY&ref=rafsrchae",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}

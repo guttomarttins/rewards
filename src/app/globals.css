@@ -2,26 +2,506 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================
+   MICROSOFT REWARDS - DESIGN SYSTEM TOKENS
+   Baseado no Fluent Design System + rewards.bing.com
+   ======================================== */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ========================================
+     CORES PRIMÁRIAS MICROSOFT
+     ======================================== */
+  --ms-blue: #0067B8;
+  --ms-blue-hover: #005A9E;
+  --ms-blue-light: #E8F3FD;
+  --ms-blue-pressed: #004578;
+  --ms-dark-blue: #004578;
+
+  /* ========================================
+     CORES DE RECOMPENSAS (REWARDS THEME)
+     ======================================== */
+  --rewards-gold: #FFB900;
+  --rewards-gold-hover: #CC9500;
+  --rewards-gold-light: #FFF3D6;
+  --rewards-gold-pressed: #997200;
+  --rewards-green: #107C10;
+  --rewards-green-hover: #0E6C0E;
+  --rewards-green-light: #DFF6DD;
+  --rewards-purple: #6B3FA0;
+  --rewards-purple-hover: #5A3488;
+  --rewards-purple-light: #F3EBF8;
+
+  /* ========================================
+     NEUTROS (FLUENT NEUTRAL PALETTE)
+     ======================================== */
+  --white: #FFFFFF;
+  --gray-50: #F3F2F1;
+  --gray-100: #EDEBE9;
+  --gray-200: #E1DFDD;
+  --gray-300: #C8C6C4;
+  --gray-400: #A19F9D;
+  --gray-500: #8A8886;
+  --gray-600: #605E5C;
+  --gray-700: #484644;
+  --gray-800: #323130;
+  --gray-900: #201F1E;
+  --black: #1B1A19;
+
+  /* ========================================
+     SEMÂNTICAS
+     ======================================== */
+  --success: #107C10;
+  --success-hover: #0E6C0E;
+  --success-bg: #DFF6DD;
+  --success-border: #86D391;
+
+  --warning: #FFB900;
+  --warning-hover: #CC9500;
+  --warning-bg: #FFF3D6;
+  --warning-border: #FFD77A;
+
+  --error: #D13438;
+  --error-hover: #B52D30;
+  --error-bg: #FDE7E9;
+  --error-border: #F9A9AD;
+
+  --info: #0078D4;
+  --info-hover: #0064B1;
+  --info-bg: #E8F3FD;
+  --info-border: #85D0F5;
+
+  /* ========================================
+     TIPOGRAFIA (SEGOE UI / FLUENT)
+     ======================================== */
+  --font-family-base: 'Segoe UI', 'Segoe UI Web', -apple-system, BlinkMacSystemFont,
+                      'Helvetica Neue', Arial, sans-serif;
+  --font-family-mono: 'Segoe UI Mono', 'Cascadia Code', 'Consolas', monospace;
+
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 2rem;      /* 32px */
+  --font-size-4xl: 2.5rem;    /* 40px */
+  --font-size-5xl: 3rem;      /* 48px */
+  --font-size-6xl: 3.75rem;   /* 60px */
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+
+  /* ========================================
+     ESPAÇAMENTO (GRID 4PX)
+     ======================================== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* ========================================
+     BORDER RADIUS
+     ======================================== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ========================================
+     SOMBRAS (FLUENT ELEVATION)
+     ======================================== */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-focus: 0 0 0 3px rgba(0, 103, 184, 0.4);
+
+  /* ========================================
+     TRANSIÇÕES
+     ======================================== */
+  --transition-fast: 100ms ease;
+  --transition-normal: 200ms ease;
+  --transition-slow: 300ms ease;
+
+  /* ========================================
+     Z-INDEX
+     ======================================== */
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  --z-toast: 800;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --gray-50: #1B1A19;
+    --gray-100: #201F1E;
+    --gray-200: #323130;
+    --gray-300: #484644;
+    --gray-400: #605E5C;
+    --gray-500: #8A8886;
+    --gray-600: #A19F9D;
+    --gray-700: #C8C6C4;
+    --gray-800: #E1DFDD;
+    --gray-900: #EDEBE9;
+    --white: #F3F2F1;
+    --black: #FFFFFF;
+
+    --ms-blue-light: #1A3A5C;
+    --rewards-gold-light: #4D3D00;
+    --rewards-green-light: #0D2B0D;
+    --rewards-purple-light: #2D1B4D;
+
+    --success-bg: #0D2B0D;
+    --warning-bg: #4D3D00;
+    --error-bg: #4D0D0D;
+    --info-bg: #1A3A5C;
+  }
+}
+
+/* ========================================
+   RESET & BASE STYLES
+   ======================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: var(--gray-900);
+  background-color: var(--white);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  font-weight: var(--font-weight-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+/* ========================================
+   TIPOGRAFIA UTILITÁRIA
+   ======================================== */
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+  color: var(--gray-900);
+}
+
+h1 { font-size: var(--font-size-5xl); }
+h2 { font-size: var(--font-size-4xl); }
+h3 { font-size: var(--font-size-3xl); }
+h4 { font-size: var(--font-size-2xl); }
+h5 { font-size: var(--font-size-xl); }
+h6 { font-size: var(--font-size-lg); }
+
+@media (max-width: 768px) {
+  h1 { font-size: var(--font-size-4xl); }
+  h2 { font-size: var(--font-size-3xl); }
+  h3 { font-size: var(--font-size-2xl); }
+  h4 { font-size: var(--font-size-xl); }
+}
+
+p {
+  margin: 0 0 var(--space-4);
+  color: var(--gray-700);
+}
+
+a {
+  color: var(--ms-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--ms-blue-hover);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   UTILIDADES DE LAYOUT
+   ======================================== */
+
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 var(--space-4);
+  }
+}
+
+.section {
+  padding: var(--space-20) 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-16) 0;
+  }
+}
+
+.section-sm {
+  padding: var(--space-12) 0;
+}
+
+.section-lg {
+  padding: var(--space-24) 0;
+}
+
+/* ========================================
+   FOCUS VISIBLE (ACESSIBILIDADE)
+   ======================================== */
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+  border-radius: var(--radius-sm);
+}
+
+/* ========================================
+   SKIP LINK
+   ======================================== */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--ms-blue);
+  color: var(--white);
+  font-weight: var(--font-weight-medium);
+  border-radius: var(--radius-md);
+  z-index: var(--z-tooltip);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+}
+
+/* ========================================
+   ANIMAÇÕES BASE
+   ======================================== */
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-in { animation: fade-in var(--transition-normal) ease-out; }
+.animate-slide-up { animation: slide-up var(--transition-slow) ease-out; }
+.animate-slide-down { animation: slide-down var(--transition-slow) ease-out; }
+.animate-scale-in { animation: scale-in var(--transition-normal) ease-out; }
+.animate-pulse-soft { animation: pulse-soft 2s ease-in-out infinite; }
+
+/* Delay classes */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ========================================
+   SCROLLBAR STYLING
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-400);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-500);
+}
+
+/* ========================================
+   SELECTION
+   ======================================== */
+
+::selection {
+  background: var(--ms-blue-light);
+  color: var(--ms-dark-blue);
+}
+
+/* ========================================
+   UTILITY CLASSES (para uso nos componentes)
+   ======================================== */
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--rewards-gold) 0%, #FFD700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, var(--ms-blue) 0%, var(--info) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bg-gradient-hero {
+  background: linear-gradient(180deg, var(--ms-dark-blue) 0%, var(--ms-blue) 100%);
+}
+
+.bg-gradient-gold {
+  background: linear-gradient(135deg, var(--rewards-gold-light) 0%, var(--white) 100%);
+}
+
+.bg-gradient-blue {
+  background: linear-gradient(135deg, var(--ms-blue-light) 0%, var(--white) 100%);
+}
+
+.glass {
+  background: rgb(87 73 73 / 26%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--gray-200);
+}
+
+.glass-dark {
+  background: rgba(27, 26, 25, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--gray-800);
+}
+
+/* ========================================
+   PATTERN DE FUNDO (SUTIL - ESTILO MICROSOFT)
+   ======================================== */
+
+.pattern-dots {
+  background-image: radial-gradient(var(--gray-200) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.pattern-grid {
+  background-image:
+    linear-gradient(var(--gray-200) 1px, transparent 1px),
+    linear-gradient(90deg, var(--gray-200) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .pattern-dots {
+    background-image: radial-gradient(var(--gray-700) 1px, transparent 1px);
+  }
+  .pattern-grid {
+    background-image:
+      linear-gradient(var(--gray-700) 1px, transparent 1px),
+      linear-gradient(90deg, var(--gray-700) 1px, transparent 1px);
   }
 }
